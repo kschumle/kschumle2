@@ -1,2 +1,3 @@
 # kschumle2
-TCG information site for web design class
+This repository contains files for CIS300 Project
+Assignments.
