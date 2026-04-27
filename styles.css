@@ -9,17 +9,16 @@
     height: 100dvh;
 }
 
-
 nav ul{
     list-style-type: none;
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
 }
 
 nav li a{
     background-color: #c49958;
 }
-
 
 header{
     text-align: center;
@@ -45,6 +44,24 @@ h2{
     padding-bottom: .5em;
     font-size: 3em;
     font-weight: bold;
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+}
+
+h3{
+    padding-top: 1rem;
+    text-decoration: underline;
+}
+
+h4{
+    font-size: 250%;
+    color: #7d2c2e;
+    margin-bottom: .5rem;
+    padding: .5rem;
+    text-decoration: underline;
 }
 
 #hero{
@@ -58,11 +75,19 @@ h2{
     justify-content: center;
 }
 
+.grid-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    width: 100%;
+}
+
 p{
     font-size: 150%;
 }
 
- nav li a{
+nav li a{
         display: flex;
         text-decoration: none;
         border: 0px;
@@ -92,13 +117,143 @@ body{
     background-color: #0a0714;
 }
 
-nav{
-    background-color: #7d2c2e;
-}
 
 main {
     padding: 1px 20px 20px 30px;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tcgs-main {
+    padding: 0;
+}
+
+h2 {
+    padding-bottom: .5em;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+#contact-form {
+    max-width: 720px;
+    width: min(100%, 720px);
+    margin: 0;
+    padding: 1.5rem;
+    text-align: left;
+    border: none;
+}
+
+#contact-form .form-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#contact-form label {
+    width: 200px;
+    min-width: 120px;
+    text-align: right;
+    font-weight: bold;
+}
+
+#contact-form input,
+#contact-form select,
+#contact-form textarea {
+    flex: 1;
+    padding: 0.85rem 0.95rem;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+#contact-form textarea {
+    min-height: 10rem;
+}
+
+#contact-form label[for="message"] {
+    align-self: flex-start;
+    padding-top: 0.5rem;
+}
+
+#contact-form .form-actions {
+    justify-content: center;
+}
+
+#contact-form button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 999px;
+    background-color: #c49958;
+    color: #0a0714;
+    font-size: 1rem;
+}
+
+#contact-form button:hover {
+    background-color: #a07b44;
+}
+
+
+.nav-panel {
+    background-color: #7d2c2e;
+    margin-top: 1rem;
+}
+
+.nav-panel h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.nav-link a {
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0;
+    background-color: #c49958;
+    border: 0px;
+    padding-top:.5rem;
+    padding-bottom: .5rem;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.nav-link a:hover {
+    color: #eeebf8;
+    background-color: #0a0714;
+}
+
+.nav-link a:visited{
+    color: #eeebf8;
+}
+
+
+.content h3 {
+    margin-top: 0;
+    color: #c49958;
+    font-size: 300%;
+}
+
+#contact-form .form-row {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#contact-form label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0.35rem;
+}
+
+#contact-form .form-actions {
+    justify-content: center;
 }
 
 
@@ -117,6 +272,19 @@ footer a:visited{
     color: #c49958;
 }
 
+#pokemonimage, #magicimage, #yugiohimage, #otherimage{
+    width: 1fr;
+    height: auto;
+}
+
+#pokemon, #magic, #yugioh, #other{
+    width: 1fr;
+    height: auto;
+    background-color: #a392d9;
+    border: solid;
+    border-radius: 50px;
+}
+
 
 @media (min-width:600px){
     
@@ -130,6 +298,47 @@ footer a:visited{
     #heroMobile{
         display: none;
     }
+
+    .nav-panel {
+        margin-top: 0;
+    }
+
+    .grid-container {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    grid-template-areas:
+        "nav header header"
+        "nav pokemon pokemonimage"
+        "nav magicimage magic"
+        "nav yugioh yugiohimage"
+        "nav otherimage other";                  
+    width: 100%;
+    height: 100%;
+    row-gap: 5rem;
+    }
+
+
+    .nav-panel{grid-area: nav;}
+    #tcgheader{grid-area: header;}
+    #pokemon{grid-area: pokemon;}
+    #pokemonimage{grid-area: pokemonimage;}
+    #magic{grid-area: magic;}
+    #magicimage{grid-area: magicimage;}
+    #yugioh{grid-area: yugioh;}
+    #yugiohimage{grid-area: yugiohimage;}
+    #other{grid-area: other;}
+    #otherimage{grid-area: otherimage;}
+
+
+    nav li{
+        height: 4rem;
+    }
+
+    nav{
+        height: 4rem;
+        background-color: #7d2c2e;
+    }
+
     
     nav ul{
         display: flex;
@@ -137,7 +346,7 @@ footer a:visited{
         flex-wrap: nowrap;
         justify-content: space-around;
         list-style: none;
-        height: 2em;
+        height: 100%;
     }
 
     header{
@@ -156,17 +365,27 @@ footer a:visited{
         border-radius: 25px;
     }
 
+    .grid-container{
+        margin-top: 0;
+    }
+
+    #contact-form label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0.35rem;
+}
+
 }
 
 @media (min-width:1024px){
-
+    
     nav ul{
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-around;
         list-style: none;
-        height: 2em;
+        height: 100%;
     }
 
     header{
