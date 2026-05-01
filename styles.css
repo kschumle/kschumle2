@@ -45,6 +45,8 @@ h2{
     font-size: 3em;
     font-weight: bold;
     text-align: center;
+    margin-top: 1rem;
+    text-decoration: underline;
 }
 
 h1{
@@ -68,6 +70,11 @@ h4{
     display: none;
 }
 
+#tcgvideo{
+    margin-top: 1rem;
+}
+
+
 #heroMobile{
     display: flex;
     flex-direction: row;
@@ -82,6 +89,33 @@ h4{
     margin-bottom: 5rem;
     width: 100%;
 }
+
+.grid-container-resources{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    width: 100%;
+}
+
+.grid-container-values{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    width: 100%;
+}
+
+.grid-container-resources ul{
+    list-style-type: none;
+    text-align: justify;
+}
+
+.resourcelist{
+    display: flex;
+    justify-content: center;
+}
+
 
 p{
     font-size: 150%;
@@ -128,14 +162,6 @@ main {
 
 .tcgs-main {
     padding: 0;
-}
-
-h2 {
-    padding-bottom: .5em;
-    font-size: 3em;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 1rem;
 }
 
 section {
@@ -283,6 +309,37 @@ footer a:visited{
     background-color: #a392d9;
     border: solid;
     border-radius: 50px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 0 1rem 1rem;
+}
+
+#pokemontable, #magictable, #yugiohtable, #othertable{
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid;
+}
+
+
+
+th {
+  background-color: #7d2c2e;
+  color: #eeebf8;
+  padding: 1rem 0.5rem 0rem;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#pokemon a, #magic a, #yugioh a, #other a{
+    text-decoration: none;
 }
 
 
@@ -303,6 +360,11 @@ footer a:visited{
         margin-top: 0;
     }
 
+    td{
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+    }
+
     .grid-container {
     display: grid;
     grid-template-columns: 200px 1fr 1fr;
@@ -317,9 +379,41 @@ footer a:visited{
     row-gap: 5rem;
     }
 
+    .grid-container-resources {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+        "nav header"
+        "nav pokemon"
+        "nav magic"
+        "nav yugioh"
+        "nav other";                  
+    width: 100%;
+    height: 100%;
+    row-gap: 5rem;
+    margin-top: 0;
+    }
+
+    .grid-container-values {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    grid-template-areas:
+        "nav header header"
+        "nav pokemon pokemontable"
+        "nav magictable magic"
+        "nav yugioh yugiohtable"
+        "nav othertable other";                  
+    width: 100%;
+    height: 100%;
+    row-gap: 5rem;
+    margin-top: 0;
+    }
+
 
     .nav-panel{grid-area: nav;}
     #tcgheader{grid-area: header;}
+    #resourcesheader{grid-area: header;}
+    #valuesheader{grid-area: header;}
     #pokemon{grid-area: pokemon;}
     #pokemonimage{grid-area: pokemonimage;}
     #magic{grid-area: magic;}
@@ -328,6 +422,11 @@ footer a:visited{
     #yugiohimage{grid-area: yugiohimage;}
     #other{grid-area: other;}
     #otherimage{grid-area: otherimage;}
+    #pokemontable{grid-area: pokemontable; margin-right: 2rem; display: flex; align-items: center; justify-content: center;} 
+    #magictable{grid-area: magictable; margin-left: 2rem; display: flex; align-items: center; justify-content: center;}
+    #yugiohtable{grid-area: yugiohtable; margin-right: 2rem; display: flex; align-items: center; justify-content: center;}
+    #othertable{grid-area: othertable; margin-left: 2rem; display: flex; align-items: center; justify-content: center;}
+
 
 
     nav li{
